@@ -67,6 +67,8 @@ def webServer(port=13331):
       #Fill in start
       outputdata = b"HTTP/1.1 404 Not Found\r\n"
       outputdata += b"Content-Type: text/html; charset=UTF-8\r\n\r\n"
+      outputdata += b"Server: SimplePythonServer/1.0\r\n\r\n"
+      outputdata += b"Connection: close\r\n\r\n"
       outputdata += b"<html><head><title>404 Not Found</title></head><body><h1>404 Not Found</h1><p>The requested file was not found on this server.</p></body></html>"
       connectionSocket.sendall(outputdata)
 
